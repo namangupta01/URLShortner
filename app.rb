@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'byebug'
 require 'sinatra/json'
+require 'logger'
 
 current_dir = Dir.pwd
 Dir["#{current_dir}/models/*.rb"].each { |file| require file }
