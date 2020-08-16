@@ -1,0 +1,18 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  pool: 2
+  host: <%= ENV['URL_SHORTENER_DATABASE_HOST'] %>
+  port: <%= ENV['URL_SHORTENER_DATABASE_HOST_PORT'] %>
+  database: <%= ENV['URL_SHORTENER_DATABASE_NAME'] %>
+  username: <%= ENV['URL_SHORTENER_USER'] %>
+  password: <%= ENV['URL_SHORTENER_PASSWORD'] %>
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: <%= ENV['URL_SHORTENER_DATABASE_HOST'] %>
+  port: <%= ENV['URL_SHORTENER_DATABASE_HOST_PORT'] %>
+  database: <%= ENV['URL_SHORTENER_DATABASE_NAME'] %>
+  username: <%= ENV['URL_SHORTENER_USER'] %>
+  password: <%= ENV['URL_SHORTENER_PASSWORD'] %>
