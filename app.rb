@@ -9,7 +9,7 @@ Dir["#{current_dir}/models/entities/*.rb"].each { |file| require file }
 Dir["#{current_dir}/models/constants/*.rb"].each { |file| require file }
 
 
-get '/' do
+post '/' do
   url_string = params[:url]
   return throw_unprocessable(Constants::ValidationErrors::INVALID_URL) unless url_string.present? && is_valid_url?(url_string)
 
