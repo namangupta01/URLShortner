@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:12.0-alpine
+    volumes:
+      - url_shortener_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=captaincoder
+      - POSTGRES_PASSWORD=captaincoder
+      - POSTGRES_DB=url_shortener
+  web:
+    build: .
+    command: ruby app.rb -s Puma -p 5000 -e production
+    volumes:
+      - ./:/app/
+    ports:
+      - 5000:5000
+    env_file:
+      - ./.env.prod
+
+volumes:
+  url_shortener_data:

@@ -21,7 +21,10 @@ GEM
     multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.5.4)
     pg (1.2.3)
+    puma (5.0.4)
+      nio4r (~> 2.0)
     rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
@@ -54,6 +57,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   pg
+  puma
   rake
   sinatra
   sinatra-activerecord
