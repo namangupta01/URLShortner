@@ -9,6 +9,9 @@ Dir["#{current_dir}/models/*.rb"].each { |file| require file }
 Dir["#{current_dir}/models/entities/*.rb"].each { |file| require file }
 Dir["#{current_dir}/models/constants/*.rb"].each { |file| require file }
 
+get '/' do
+  return 'OK'
+end
 
 post '/' do
   url_string = params[:url]
@@ -32,6 +35,10 @@ post '/' do
   data[:url] = url
   data[:short_url] = ENV['URL_SHORTENER_SERVICE_DOMAIN'].to_s + "/#{token_string}"
   response_data(data, 'Url Shortened', 200)
+end
+
+get '/health-check' do
+  return response_data({}, 'Success', 200)
 end
 
 get '/:token' do
